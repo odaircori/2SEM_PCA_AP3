@@ -1,0 +1,27 @@
+.content {
+    display:flex;
+    justify-content: space-around;
+}
+
+.column {
+    height:50%;
+    width:300px;
+    margin: 5% 0;
+    background-color:#222;
+    padding:30px;
+    border-radius: 15px;
+    border:1px solid #222;
+}
+
+.column h2{
+    background-color:#fff;
+    padding:5px;
+    border-radius: 15px;
+    float:left
+}
+
+.column p {
+    color:#ccc;
+    text-indent: 10%;
+    text-align: justify;
+}

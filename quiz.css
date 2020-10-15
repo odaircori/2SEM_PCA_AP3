@@ -1,0 +1,35 @@
+.quiz, .button, #resultadoFinal {
+    width:60%;
+    margin:1em auto;
+    color:#ccc;
+}
+
+.quiz, #resultadoFinal {
+    background-color:#222;
+    padding: 15px;    
+    border-radius: 20px
+}
+
+h2{
+    margin:10px 0;
+}
+
+.button {
+    text-align: center;
+}
+
+button {
+    padding:5px;
+    border-radius:15px;
+    width:20%;
+    color:#fff;
+    background-color:#ccc;
+}
+
+button:hover{
+    border-color:red;
+}
+
+label {
+    display:block;
+}
