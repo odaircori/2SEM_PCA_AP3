@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="default.css"></style>
+    <link rel="stylesheet" href="quiz.css"></style>
+    <script src="quiz.js"></script>
+    <title>Covid-19</title>
+</head>
+<body onload="carregaPerguntas()">
+    <header>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Quiz</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="content">
+        <h1>Quiz</h1>
+        <div id="quiz" class="quiz">
+        </div>
+
+        <div class="button">
+            <button onclick=resultado() id="botao">Enviar</button>    
+        </div>
+        <div id="resultadoFinal" hidden=true></div>
+
+    </div>
+    <div class="footer"></div>
+</body>
+</html>
