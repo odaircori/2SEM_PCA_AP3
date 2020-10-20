@@ -1,6 +1,5 @@
 .column {
-    height:50%;
-    width:300px;
+    width:70%;
     margin: 5% 0;
     background-color:#222;
     padding:30px;
@@ -17,6 +16,33 @@
 
 .column p {
     color:#ccc;
-    text-indent: 10%;
+    text-indent: 5%;
     text-align: justify;
+    margin: 1em 0
+}
+
+li {
+    margin:1em 0
+}
+
+li::marker {
+    font-weight:bold;
+    font-size:16px
+}
+
+span {
+    color:#fff;
+    font-weight:bold
+}
+
+span a {
+    color:#fff
+}
+
+ul {
+    margin: 0 0 0 1em
+}
+
+span a:hover {
+    color:yellow
 }

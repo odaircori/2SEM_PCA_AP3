@@ -1,3 +1,7 @@
+.content {
+    display:block
+}
+
 .quiz, .button, #resultadoFinal {
     width:60%;
     margin:1em auto;
@@ -21,6 +25,7 @@ h2{
 button {
     padding:5px;
     border-radius:15px;
+    border:1px spçod black;
     width:20%;
     color:#fff;
     background-color:#ccc;

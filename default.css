@@ -34,6 +34,13 @@ li a:hover{
     text-decoration: underline;
 }
 
-ul li {
+ul, ol li {
     color:#ccc
+}
+
+.content {
+    display:flex;
+    justify-content: space-around;
+    width:80%;
+    margin:0 auto
 }
