@@ -1,88 +1,33 @@
-const questoes = [
-    {
-        "questao": "Qual destas formas é a forma correta de prevenção contra covid-19?",
-        "numero": 1,
-        "alternativas": [
-            {
-                "alternativa": "Usar máscara em locais públicos, lavar bem as mãos e usar álcool em gel",
-                "letra": "A",
-                "correta": true
-            },
-            {
-                "alternativa": "Teste B",
-                "letra": "B",
-                "correta": false
-            },
-            {
-                "alternativa": "Teste C",
-                "letra": "C",
-                "correta": false
-            },
-            {
-                "alternativa": "Teste D",
-                "letra": "D",
-                "correta": false
-            }
-        ]
-    },
-    {
-        "questao": "Pergunta 2?",
-        "numero": 2,
-        "alternativas": [
-            {
-                "alternativa": "Usar máscara em locais públicos, lavar bem as mãos e usar álcool em gel",
-                "letra": "A",
-                "correta": false
-            },
-            {
-                "alternativa": "Teste B",
-                "letra": "B",
-                "correta": false
-            },
-            {
-                "alternativa": "Teste C",
-                "letra": "C",
-                "correta": true
-            },
-            {
-                "alternativa": "Teste D",
-                "letra": "D",
-                "correta": false
-            }
-        ]
-    }    
-]
-
 let enviar = false;
 
 function carregaPerguntas(){
     let quiz = document.getElementById("quiz");
-    let montaPerguntas = [];
-    let listaPerguntas = [];
+    let montaperguntas = [];
+    let listaperguntas = [];
 
-    for(var i = 0; i < questoes.length;i++){
-        montaPerguntas = [];
+    for(var i = 0; i < perguntas.length;i++){
+        montaperguntas = [];
 
-        for(var o = 0; o < questoes[i].alternativas.length;o++){
-            montaPerguntas.push(
+        for(var o = 0; o < perguntas[i].alternativas.length;o++){
+            montaperguntas.push(
                 `<label>
-                    <input onclick=habilitaBotao() type="radio" id="resposta" name=${questoes[i].numero} value=${questoes[i].alternativas[o].correta}>
-                    <b>${questoes[i].alternativas[o].letra}</b> - 
-                    ${questoes[i].alternativas[o].alternativa}
+                    <input onclick=habilitaBotao() type="radio" id="resposta" name=${perguntas[i].numero} value=${perguntas[i].alternativas[o].correta}>
+                    <b>${perguntas[i].alternativas[o].letra}</b> - 
+                    ${perguntas[i].alternativas[o].alternativa}
                 </label>`
             )
 
 
         }
 
-        listaPerguntas.push(
-            `<h2>${questoes[i].questao}</h2>
-            ${montaPerguntas.join(" ")}`
+        listaperguntas.push(
+            `<h2>${i + 1} - ${perguntas[i].questao}</h2>
+            ${montaperguntas.join(" ")}`
         )
         
     }
 
-    quiz.innerHTML = listaPerguntas.join(" ");
+    quiz.innerHTML = listaperguntas.join(" ");
 }
 
 function habilitaBotao(){
@@ -97,7 +42,7 @@ function habilitaBotao(){
         }
     }
 
-    if(checaMarcacoes === questoes.length){
+    if(checaMarcacoes === perguntas.length){
         enviar = true;
         botao.style.backgroundColor = "#222";
         botao.style.borderColor = "green";
@@ -122,7 +67,7 @@ function resultado(){
 
         }
 
-        let resultado = respostasCertas / questoes.length * 100;
+        let resultado = respostasCertas / perguntas.length * 100;
 
         resultadoFinal.hidden = false;
         resultadoFinal.innerHTML = `O resultado do seu teste é ${resultado}`;
