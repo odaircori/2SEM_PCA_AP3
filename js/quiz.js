@@ -10,7 +10,7 @@ function carregaPerguntas(){
 
         for(var o = 0; o < perguntas[i].alternativas.length;o++){
             montaperguntas.push(
-                `<label>
+                `<label id="labelResposta" name=${perguntas[i].numero}>
                     <input onclick=habilitaBotao() type="radio" id="resposta" name=${perguntas[i].numero} value=${perguntas[i].alternativas[o].correta}>
                     <b>${perguntas[i].alternativas[o].letra}</b> - 
                     ${perguntas[i].alternativas[o].alternativa}
@@ -52,8 +52,10 @@ function habilitaBotao(){
 
 function resultado(){
     let respostas = document.querySelectorAll("#resposta");
+    let labelRespostas = document.querySelectorAll("#labelResposta");
     let resultadoFinal = document.getElementById("resultadoFinal");
     let respostasCertas = 0;
+    let idPergunta = null;
 
     if(!enviar){
         window.alert("Favor marcar todas as opções antes de Enviar!");
@@ -63,6 +65,10 @@ function resultado(){
 
             if(respostas[i].value === "true" && respostas[i].checked === true){
                 respostasCertas++
+                
+                labelRespostas[i].style.color = '#0f0';
+            }else{
+                labelRespostas[i].style.color = '#f00';
             }
 
         }
